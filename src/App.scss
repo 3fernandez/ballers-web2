@@ -1,0 +1,38 @@
+.app {
+  text-align: center;
+
+}
+
+.logo {
+  height: 80px;
+}
+
+.header {
+  background-color: #efefef;
+  height: 150px;
+  padding: 20px;
+}
+
+.intro {
+  font-size: large;
+}
+
+.appBar {
+  color: white;
+
+  &:not(.flat) {
+    box-shadow: none;
+  }
+
+  .title {
+    a {
+      color: red;
+      background-image: url("./images/ballers-logo-white.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 42px;
+      text-indent: -999px;
+      display: block;
+    }
+  }
+}
