@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './images/ballers-pin.svg';
 import { Button } from 'react-toolbox/lib/button';
 import Header from './components/header/Header';
+import { Link } from 'react-router-dom';
 
 import styles from './App.scss'
 
@@ -19,6 +20,7 @@ class App extends Component {
             To get started, edit <code>src/App.js</code> and save to reload.
             <Button label="Hello World!" />
           </p>
+          <Link to="/courts">Courts</Link>
         </section>
       </div>
     );

@@ -23,7 +23,7 @@ export default class Header extends React.Component {
     if(this.props.user) {
       return this.renderAvatar(this.props.user);
     }
-    return (<Button href="/auth/google" label="Login" raised accent />);
+    return (<Button href="http://localhost:5000/auth/google" label="Login" raised accent />);
   }
 
   renderAvatar(user) {
