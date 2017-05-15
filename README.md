@@ -1,4 +1,4 @@
-# ![Ballers](images/ballers-logo.png)
+# ![Ballers](src/images/ballers-logo.svg)
 
 A basketball social network. Find basketball games near to you.
 
