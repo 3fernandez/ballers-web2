@@ -10,9 +10,14 @@ import {
 import App from './App';
 import Courts from './pages/courts/Courts';
 
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers/';
+
 import './index.css';
 
 const rootElement = document.getElementById('root');
+const store = createStore(reducers);
 
 function PrivateRoute ({component: Component, ...rest}) {
   const isAuthenticated = true;
@@ -29,12 +34,14 @@ function PrivateRoute ({component: Component, ...rest}) {
 function renderRoot(App) {
   ReactDOM.render(
     <AppContainer>
-      <Router>
-        <div>
-          <Route exact={true} path="/" component={App}></Route>
-          <PrivateRoute path="/courts" component={Courts} />
-        </div>
-      </Router>
+      <Provider store={store}>
+        <Router>
+          <div>
+            <Route exact={true} path="/" component={App}></Route>
+            <PrivateRoute path="/courts" component={Courts} />
+          </div>
+        </Router>
+      </Provider>
     </AppContainer>,
     rootElement
   );

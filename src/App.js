@@ -18,7 +18,6 @@ class App extends Component {
           </div>
           <p className={styles.intro}>
             To get started, edit <code>src/App.js</code> and save to reload.
-            <Button label="Hello World!" />
           </p>
           <Link to="/courts">Courts</Link>
         </section>
