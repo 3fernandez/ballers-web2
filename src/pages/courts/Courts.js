@@ -1,8 +1,12 @@
 import React from 'react';
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+
 import Link from 'react-toolbox/lib/link';
 import Button from "react-toolbox/lib/button";
 import Map from '../../components/map/Map';
+
+import { selectCourt } from '../../actions/';
 
 export class Courts extends React.Component {
   renderCourts() {
@@ -12,7 +16,7 @@ export class Courts extends React.Component {
           {court.name}
           <br />
           {court.address}
-          <Button label="view" />
+          <Button label="view" onClick={ () => this.props.selectCourt(court) } />
         </li>
       );
     });
@@ -38,4 +42,8 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps)(Courts);
+function matchDispatchProps(dispatch) {
+  return bindActionCreators({ selectCourt: selectCourt }, dispatch);
+}
+
+export default connect(mapStateToProps, matchDispatchProps)(Courts);

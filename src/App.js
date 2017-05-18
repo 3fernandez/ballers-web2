@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './images/ballers-pin.svg';
-import { Button } from 'react-toolbox/lib/button';
 import Header from './components/header/Header';
 import { Link } from 'react-router-dom';
 

@@ -8,7 +8,6 @@ export default () => {
         -43.345593399999984,
         -22.8903048
       ],
-      focused: false,
       createdAt: "2017-05-04T04:20:51.508Z",
       updatedAt: "2017-05-04T04:20:51.508Z"
     },
@@ -20,7 +19,6 @@ export default () => {
         -43.41397269999999,
         -22.8885352
       ],
-      focused: false,
       createdAt: "2017-05-04T04:20:51.513Z",
       updatedAt: "2017-05-04T04:20:51.513Z"
     }
