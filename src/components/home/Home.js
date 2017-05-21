@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import logo from './images/ballers-pin.svg';
-import Header from './components/header/Header';
+import logo from '../..//images/ballers-pin.svg';
+import Header from '../header/Header';
 import { Link } from 'react-router-dom';
 
-import styles from './App.scss'
+import styles from './Home.scss'
 
 class App extends Component {
   render() {

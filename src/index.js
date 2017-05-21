@@ -7,17 +7,16 @@ import {
   Redirect,
 } from 'react-router-dom';
 
-import App from './App';
-import Courts from './pages/courts/Courts';
-
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducers from './reducers/';
+
+import store from './reducers';
+
+import Home from './components/home/Home';
+import Courts from './containers/courts/Courts';
 
 import './index.css';
 
 const rootElement = document.getElementById('root');
-const store = createStore(reducers);
 
 function PrivateRoute ({component: Component, ...rest}) {
   const isAuthenticated = true;
@@ -31,13 +30,13 @@ function PrivateRoute ({component: Component, ...rest}) {
   )
 }
 
-function renderRoot(App) {
+function renderRoot(Home) {
   ReactDOM.render(
     <AppContainer>
       <Provider store={store}>
         <Router>
           <div>
-            <Route exact={true} path="/" component={App}></Route>
+            <Route exact={true} path="/" component={Home}></Route>
             <PrivateRoute path="/courts" component={Courts} />
           </div>
         </Router>
@@ -47,11 +46,11 @@ function renderRoot(App) {
   );
 }
 
-renderRoot(App);
+renderRoot(Home);
 
 if (module.hot) {
-    module.hot.accept('./App', () => {
-        const NextApp = require('./App').default; // eslint-disable-line global-require
-        renderRoot(NextApp);
-    });
+  module.hot.accept('./components/home/Home', () => {
+    const NextApp = require('./components/home/Home').default; // eslint-disable-line global-require
+    renderRoot(NextApp);
+  });
 }

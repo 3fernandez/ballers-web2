@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 
 export class Map extends React.Component {
   renderCourts() {
-    console.log(this.props);
     return this.props.courts.map((court) => {
       const activeCourt = this.props.activeCourt;
       const focused = activeCourt && court.id === activeCourt.id ? "***" : "";
