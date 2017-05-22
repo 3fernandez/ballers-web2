@@ -1,11 +1,10 @@
-import { combineReducers, createStore }  from 'redux';
-import courtReducer from './court'
-import activeCourtReducer from './active-court'
+import { combineReducers }  from 'redux';
+import courts from './court'
+import activeCourt from './active-court'
 
-const allReducers = combineReducers({
-  courts: courtReducer,
-  activeCourt: activeCourtReducer,
+export default combineReducers({
+  courts,
+  activeCourt,
 });
 
-export default createStore(allReducers);
 

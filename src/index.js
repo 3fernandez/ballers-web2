@@ -9,7 +9,7 @@ import {
 
 import { Provider } from 'react-redux';
 
-import store from './reducers';
+import store from './store';
 
 import Home from './components/home/Home';
 import Courts from './containers/courts/Courts';

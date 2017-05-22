@@ -8,10 +8,10 @@ export class Map extends React.Component {
       const focused = activeCourt && court.id === activeCourt.id ? "***" : "";
       return (
         <li key={court.id} >
-          {court.name}
+          {court.attributes.name}
           {focused}
           <br />
-          {court.coordinates[0]}, {court.coordinates[1]}
+          {court.attributes.coordinates[0]}, {court.attributes.coordinates[1]}
         </li>
       );
     });
