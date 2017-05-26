@@ -8,6 +8,10 @@ export const selectCourt = (court) => {
 
 export function fetchCourts(courts) {
   return (dispatch) => {
+    dispatch({
+      type: 'FETCH_COURTS',
+    });
+
     const options = {
       method: 'get',
       headers: {
@@ -35,8 +39,8 @@ export function fetchCourts(courts) {
     .then((json) => {
       console.log('parsed json', json);
       dispatch({
-        type: 'FETCH_COURTS',
-        payload: courts
+        type: 'LOAD_COURTS',
+        payload: json.data,
       });
     })
     .catch((ex) => {
