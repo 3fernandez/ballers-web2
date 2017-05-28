@@ -6,7 +6,7 @@ import build from 'redux-object';
 import Button from "react-toolbox/lib/button";
 import Map from '../map/Map';
 
-import { selectCourt, fetchCourts } from '../../actions/';
+import { selectCourt, fetchCourts } from '../../redux/actions/';
 import Header from '../../components/header/Header';
 
 

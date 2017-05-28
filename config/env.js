@@ -9,7 +9,8 @@ function getClientEnvironment(publicUrl) {
     .filter(key => REACT_APP.test(key))
     .reduce(
       (env, key) => {
-        env[key] = process.env[key];
+        const newKey = key.replace(REACT_APP, "");
+        env[newKey] = process.env[key];
         return env;
       },
       {
