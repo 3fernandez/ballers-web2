@@ -1,14 +1,10 @@
-const initialState ={
-  courts: [],
-};
-
-export default (state=initialState, action) => {
+export default (state = {}, action) => {
   switch (action.type) {
     case 'FETCH_COURTS':
-      return state;
+      return  {...state, loading: true };
 
-    case 'LOAD_COURTS':
-      return {...state, courts: action.payload };
+    case 'FETCH_COURTS_SUCCESS':
+      return action.payload;
 
     default:
       return state;

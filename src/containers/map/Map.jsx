@@ -1,17 +1,25 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import build from 'redux-object'
 
+//@connect(
+  //state => (
+    //{
+      //activeCourt: state.activeCourt
+    //}
+  //)
+//)
 export class Map extends React.Component {
   renderCourts() {
-    return this.props.courts.map((court) => {
+    return build(this.props, 'courts').map(court => {
       const activeCourt = this.props.activeCourt;
       const focused = activeCourt && court.id === activeCourt.id ? "***" : "";
       return (
         <li key={court.id} >
-          {court.attributes.name}
+          {court.name}
           {focused}
           <br />
-          {court.attributes.coordinates[0]}, {court.attributes.coordinates[1]}
+          {court.coordinates[0]}, {court.coordinates[1]}
         </li>
       );
     });
@@ -31,10 +39,10 @@ export class Map extends React.Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    activeCourt: state.activeCourt,
-  }
-}
-
-export default connect(mapStateToProps)(Map);
+export default connect(
+  state => (
+    {
+      activeCourt: state.activeCourt
+    }
+  ),
+)(Map);
