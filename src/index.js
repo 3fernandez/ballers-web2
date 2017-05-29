@@ -14,7 +14,7 @@ import store from './redux/store';
 import Home from './components/home/Home';
 import Courts from './containers/courts/Courts';
 
-import './index.css';
+import './styles/main.scss';
 
 const rootElement = document.getElementById('root');
 
