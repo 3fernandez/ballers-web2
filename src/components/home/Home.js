@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../..//images/ballers-pin.svg';
+import logo from '../../assets/images/ballers-pin.svg';
 import Header from '../header/Header';
 import { Link } from 'react-router-dom';
 
