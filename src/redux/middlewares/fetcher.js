@@ -13,7 +13,7 @@ const fetchData = (config, dispatch, action) => {
 function fetchFrom(action, config) {
   const options = Object.assign({}, config.options, action.options);
 
-  return fetch(`${config.host}/${action.fetch.endpoint}`, options)
+  return fetch(`${config.host}${action.fetch.endpoint}`, options)
     .then(checkStatus).then(formatToJSON);
 }
 
